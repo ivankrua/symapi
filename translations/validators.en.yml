@@ -2,3 +2,6 @@ email.is_invalid: Email is invalid
 signup.already_registered: User with this email already registered!
 signup.user_or_password_is_invalid: User or password is not correct!
 form.bad_request: Oops... Something went wrong...
+jwt.is_expired: Your token is expired, please renew it.
+jwt.is_invalid: JWT token is not valid, or user is blocked!
+jwt.is_not_found: JWT token is not valid!
