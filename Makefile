@@ -21,3 +21,9 @@ clean:
 
 fix:
 	@phpcbf --standard=PSR12 ./src --encoding=utf-8 --extensions=php
+
+migrate:
+	@docker exec -it symapi_app_1 bin/console doctrine:migrations:migrate
+
+diff:
+	@docker exec -it symapi_app_1 bin/console doctrine:migrations:diff
