@@ -1,0 +1,4 @@
+email.is_invalid: Email is invalid
+signup.already_registered: User with this email already registered!
+signup.user_or_password_is_invalid: User or password is not correct!
+form.bad_request: Oops... Something went wrong...

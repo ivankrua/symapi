@@ -67,8 +67,8 @@ class ApiResponse extends JsonResponse
      * Format data.
      *
      * @param string $message
-     * @param array  $data
-     * @param array  $errors
+     * @param array $data
+     * @param array $errors
      *
      * @return array[]
      *

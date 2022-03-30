@@ -3,6 +3,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Persistence\Mapping\ClassMetadata;
 use Doctrine\Persistence\ObjectManager;
@@ -11,6 +12,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use JMS\Serializer\Annotation as Serializer;
 use Serializable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -22,7 +24,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @UniqueEntity(fields="email", message="this e-mail already used")
  * @Gedmo\Loggable
  */
-class User implements UserInterface, Serializable, ObjectManagerAware
+class User implements UserInterface, Serializable, ObjectManagerAware, PasswordAuthenticatedUserInterface
 {
     private const SALT_ENTROPY = 8;//bytes
 
@@ -264,6 +266,7 @@ class User implements UserInterface, Serializable, ObjectManagerAware
     {
         return $this->groups;
     }
+
     public function addGroup(Group $tag): self
     {
         if (!$this->groups->contains($tag)) {
@@ -271,6 +274,7 @@ class User implements UserInterface, Serializable, ObjectManagerAware
         }
         return $this;
     }
+
     public function removeGroup(Group $tag): self
     {
         $this->groups->removeElement($tag);

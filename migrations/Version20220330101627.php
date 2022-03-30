@@ -33,7 +33,7 @@ final class Version20220330101627 extends AbstractMigration
         $this->addSql('ALTER TABLE user_group DROP FOREIGN KEY FK_8F02BF9DFE54D947');
         $this->addSql('ALTER TABLE user_group DROP FOREIGN KEY FK_8F02BF9DA76ED395');
         $this->addSql('DROP TABLE groups');
-        $this->addSql('DROP TABLE users');
+        $this->addSql('DROP TABLE users'); 
         $this->addSql('DROP TABLE user_group');
     }
 }

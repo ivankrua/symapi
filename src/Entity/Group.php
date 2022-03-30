@@ -84,6 +84,7 @@ class Group
     {
         return $this->users;
     }
+
     public function addUser(User $user): self
     {
         if (!$this->users->contains($user)) {
@@ -92,6 +93,7 @@ class Group
         }
         return $this;
     }
+
     public function removeUser(User $user): self
     {
         if ($this->users->removeElement($user)) {
