@@ -26,6 +26,15 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
+    public function getUserList(int $offset, int $count): array
+    {
+        $q = $this->createQueryBuilder('u')
+            ->orderBy('u.id', 'ASC')
+            ->setFirstResult($offset)
+            ->setMaxResults($count);
+        return $q->getQuery()->getResult();
+    }
+
     public function getUserByEmail(string $email): ?User
     {
         try {

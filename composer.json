@@ -11,7 +11,7 @@
         "doctrine/orm": "^2.11",
         "gedmo/doctrine-extensions": "^3.6",
         "jms/serializer": "^3.17",
-        "lexik/jwt-authentication-bundle": "^2.14",
+        "lexik/jwt-authentication-bundle": "^2.6",
         "nelmio/api-doc-bundle": "^3.0",
         "symfony-bundles/json-request-bundle": "^4.1",
         "symfony/asset": "5.4.*",

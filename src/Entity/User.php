@@ -3,6 +3,7 @@
 
 namespace App\Entity;
 
+use App\Exception\NotFoundException;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Persistence\Mapping\ClassMetadata;
@@ -277,7 +278,9 @@ class User implements UserInterface, Serializable, ObjectManagerAware, PasswordA
 
     public function removeGroup(Group $tag): self
     {
-        $this->groups->removeElement($tag);
+        if (!$this->groups->removeElement($tag)) {
+            throw new NotFoundException('Group not found!');
+        }
         return $this;
     }
 }

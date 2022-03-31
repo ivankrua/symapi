@@ -28,7 +28,7 @@ class AuthController extends ApiController
      *
      * @SWG\Post(description="", tags={"Signin"})
      * @SWG\Parameter(name="body", in="body",description="Body json params", @Model(type=SignInType::class))
-     * @SWG\Response(response=201, description="Created",
+     * @SWG\Response(response=200, description="Token",
      *     examples= {
      *      "application/json":{"data":{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1Ni....gfkCyd3w"}}
      *     }
@@ -59,7 +59,7 @@ class AuthController extends ApiController
      * @SWG\Parameter(name="body", in="body",description="Body json params", @Model(type=SignUpType::class))
      * @SWG\Response(response=201, description="Created",
      *     examples= {
-     *      "application/json":{"data":{"token":"fd886cc3-0eff-4591-a4e8-d3d0da0455ac"}}
+     *      "application/json":{"data":{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1Ni....gfkCyd3w"}}
      *     }
      * )
      * @SWG\Response(response=400, description="Bad Request")

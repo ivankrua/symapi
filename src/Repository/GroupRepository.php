@@ -23,4 +23,13 @@ class GroupRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Group::class);
     }
+
+    public function getGroupList(int $offset, int $count): array
+    {
+        $q = $this->createQueryBuilder('g')
+            ->orderBy('g.id', 'ASC')
+            ->setFirstResult($offset)
+            ->setMaxResults($count);
+        return $q->getQuery()->getResult();
+    }
 }
